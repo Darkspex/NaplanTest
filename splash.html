@@ -1,0 +1,66 @@
+﻿<html>
+<style>
+	body {
+		height: 100vh; 
+		margin: 0; 
+		display: flex; 
+		align-items: center; 
+		justify-content: center;
+	}
+
+    .container {
+        font-family: sans-serif;
+        line-height: 1.5;
+        margin: 0;
+        padding: 0;
+        background: #fff;
+        alignment: center;
+        top: 36%;
+    }
+
+    .containerR {
+    }
+
+    .vertical-centerR {
+        margin: 0;
+    }
+
+</style>
+
+
+<body style="color: #7c7c7c;">
+    <div class="containerR container">
+        <div class="vertical-centerR">
+            <div>
+                <div id="titleSpan" style="height: 14px;"></div>
+                <p></p>
+                <img src="logo.png">
+                <p></p>
+                <div id="statusSpan" style="height: 14px;"></div>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        var titleSpan = document.getElementById("titleSpan");
+        var statusSpan = document.getElementById("statusSpan");
+
+        __rstatus = (apiname, event, args) => {
+            if (apiname == "startup" && event == "status") {
+                titleSpan.innerHTML = "Welcome to NAP Locked down browser";
+                statusSpan.innerHTML = args;
+            }
+
+            if (apiname == "shutdown" && event == "status") {
+
+                titleSpan.innerHTML = "Exiting NAP Locked down browser";
+                statusSpan.innerHTML = args;
+            }
+        };
+
+    </script>
+</body>
+
+
+</html>
